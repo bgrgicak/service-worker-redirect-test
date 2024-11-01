@@ -4,9 +4,11 @@ This is a test to see if the Service Worker can redirect requests inside iframes
 
 ## Test
 
-The test `index.html` loads two iframes which should be redirected by the Service Worker to `response.html`.
+The test in `index.html` loads two iframes which should be redirected by the Service Worker to `response.html`.
 The first iframe will attempt to redirect to a relative URL and the second one to an absolute URL.
 The expected result is that both iframes are redirected to `response.html`.
+
+![Test page](screenshots/test-page.png)
 
 ## Test results
 
@@ -30,11 +32,13 @@ Failed to load resource: The URL can’t be shown /redirect-to-relative-url.html
 
 #### Service Worker console
 
-The Service Worker console doesn't show any errors but I was able to confirm that the code runs using a debugger.
+The Service Worker console doesn't show any errors.
+
+I was able to confirm that the Service Worker code runs using a debugger.
 
 #### Network tab
 
-The Network tab lists the request to `redirect-to-relative-url.html` and shows an error.
+The Network tab lists the request to `/redirect-to-relative-url.html` and shows an error.
 
 ![Safari network tab headers error](screenshots/safari-network-headers-error.png)
 ![Safari network tab preview error](screenshots/safari-network-preview-error.png)
@@ -48,7 +52,7 @@ The Network tab lists the request to `redirect-to-relative-url.html` and shows a
 
 ### Start a local server
 
-Here are two options to start a local server, but you can use any other way to serve the files.
+Here are two options to start a local server, but you can use any other static file server.
 
 #### Using PHP
 ```
