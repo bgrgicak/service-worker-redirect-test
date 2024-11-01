@@ -23,6 +23,8 @@ The expected result is that both iframes are redirected to `response.html`.
 
 In Safari the relative URL iframe is not redirected, while it works in Chrome and Firefox.
 
+Bug report in [WebKit Bugzilla](https://bugs.webkit.org/show_bug.cgi?id=282427).
+
 #### Browser console
 
 The browser console shows the following error:
