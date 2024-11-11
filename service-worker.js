@@ -14,5 +14,8 @@ self.addEventListener('fetch', (event) => {
   if ('/redirect-to-relative-url.html' === url.pathname) {
     event.respondWith(new Response(null, { status: 302, headers: { Location: '/response.html' } }));
   }
+  if ("/redirect-using-response-redirect.html" === url.pathname) {
+    event.respondWith(Response.redirect("/response.html"));
+  }
   return;
 });

@@ -8,15 +8,18 @@ The test in `index.html` loads two iframes which should be redirected by the Ser
 The first iframe will attempt to redirect to a relative URL and the second one to an absolute URL.
 The expected result is that both iframes are redirected to `response.html`.
 
+The third iframe attempts to redirect to a relative URL using `Response.redirect()`.
+This is currently the <a href="https://bugs.webkit.org/show_bug.cgi?id=282427#c2">suggested workaround for relative URLs in Safari</a>.
+
 ![Test page](screenshots/test-page.png)
 
 ## Test results
 
-| Browser | Redirect to absolute URL | Redirect to relative URL |
-| ------- | ---------------------- | ---------------------- |
-| Chrome  | ✓                      | ✓                      |
-| Firefox | ✓                      | ✓                      |
-| Safari  | ✓                      | ✗                      |
+| Browser | Redirect to absolute URL | Redirect to relative URL | Redirect using Response.redirect() |
+| ------- | ---------------------- | ---------------------- | ---------------------- |
+| Chrome  | ✓                      | ✓                      | ✓                      |
+| Firefox | ✓                      | ✓                      | ✓                      |
+| Safari  | ✓                      | ✗                      | ✓                      |
 
 
 ### Safari relative URLs are not redirected
